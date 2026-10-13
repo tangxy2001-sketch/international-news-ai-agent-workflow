@@ -1,8 +1,8 @@
 {
-  "name": "media-research-workflow",
-  "version": "1.0.0",
+  "name": "international-news-ai-agent-workflow",
+  "version": "1.1.0",
   "private": true,
-  "description": "Source-traceable media research workflow",
+  "description": "An AI Agent workflow for research based on international news media reporting",
   "scripts": {
     "demo": "node scripts/demo.js",
     "test": "node --test tests/*.test.js && python3 -m unittest discover -s tests -p \"test_*.py\""

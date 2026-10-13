@@ -1,8 +1,10 @@
-# Workflow contract
+# AI Agent workflow contract
 
 ## Execution model
 
-A coordinator manages four roles. One agent may perform all roles sequentially; independent collection or translation tasks may be delegated when the host supports it and the task permits it. The coordinator alone writes shared indexes and final outputs.
+An AI Agent coordinator manages four roles. One agent may perform all roles sequentially; independent collection or translation tasks may be delegated when the host supports it and the task permits it. The coordinator alone writes shared indexes and final outputs.
+
+Primary research data comes from international news media reporting; optional think-tank analysis is labeled separately. Retrieval is supplied by the host environment, not by a bundled API client. See [tool boundaries](docs/TOOLS.md).
 
 ## Task specification
 

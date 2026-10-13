@@ -1,8 +1,8 @@
-# Media Research Workflow
+# International News AI Agent Workflow
 
-**A reusable agent workflow for collecting sources, organizing evidence, drafting reports, and producing a traceable Word appendix.**
+**An AI Agent workflow for research based on international news media reporting—from source collection and evidence analysis to reports and traceable Word appendices.**
 
-一个通用媒体研究工具包：用四个阶段把来源资料转化为可核查的报告与文档。研究主题、检索范围和写作要求由使用者在运行时提供。
+一个以**国际新闻媒体报道为主要数据来源**的 **AI Agent 研究工作流**，覆盖检索、证据整理、分析报告撰写和 Word 素材文档生成。研究主题、检索范围和写作要求由使用者在运行时提供。智库材料可作为可选补充，并与新闻报道分别标注。
 
 ```mermaid
 flowchart LR
@@ -11,6 +11,25 @@ flowchart LR
     C --> D[Present / 生成文档]
     C -- 补充证据 --> B
 ```
+
+## AI Agent roles and data sources
+
+The coordinator routes tasks through four specialist roles: Search, Organize, Report, and Present. One AI Agent can perform these roles sequentially; compatible hosts may delegate independent tasks to multiple agents. This repository defines skills, handoff contracts, and deterministic utilities. It does not implement a standalone multi-agent runtime or model API orchestration service.
+
+Primary source data is international news media reporting, selected through the configurable regional publisher catalog. Optional think-tank material is a separately identified supplementary source type. Publisher domains are query filters, not API endpoints or licensed news feeds. The bundled case uses explicitly fictional articles and does not contain real reporting.
+
+## Search tools: included vs. external
+
+| Component | Included in this package? |
+|---|---|
+| Search-role instructions, multilingual query guidance, filtering and provenance rules | Yes |
+| Regional publisher domains and language configuration | Yes: config/sources.json |
+| Executable news search API client, crawler, or provider SDK | No |
+| Model API client or automatic agent spawning runtime | No |
+| Initialization, citation checks, and Word generation | Yes |
+| Real API credentials or access to a paid news feed | No |
+
+Actual retrieval requires a search/browser tool exposed by the host agent environment or a separately configured API integration. The package contains no built-in retrieval implementation. SEARCH_API_KEY in .env.example is an empty illustrative placeholder; no included script loads it, and setting it alone does not enable search. See [tool boundaries](docs/TOOLS.md).
 
 ## Capabilities
 
@@ -53,6 +72,7 @@ The agent performs research and semantic review. The CLI initializes files, chec
 | Path | Purpose |
 |---|---|
 | [WORKFLOW.md](WORKFLOW.md) | Stage contracts, quality gates, and recovery |
+| [docs/TOOLS.md](docs/TOOLS.md) | Search integration requirements and implemented utilities |
 | [skills/media-workflow](skills/media-workflow/SKILL.md) | Coordinator instructions |
 | [skills/](skills/) | Four stage-specific skills |
 | [config/sources.json](config/sources.json) | Editable regional publisher and language catalog |
