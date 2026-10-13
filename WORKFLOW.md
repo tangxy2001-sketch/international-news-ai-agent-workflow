@@ -4,7 +4,7 @@
 
 An AI Agent coordinator manages four roles. One agent may perform all roles sequentially; independent collection or translation tasks may be delegated when the host supports it and the task permits it. The coordinator alone writes shared indexes and final outputs.
 
-Primary research data comes from international news media reporting; optional think-tank analysis is labeled separately. Retrieval is supplied by the host environment, not by a bundled API client. See [tool boundaries](docs/TOOLS.md).
+Primary research data comes from international news media reporting; optional think-tank analysis is labeled separately. Retrieval uses the bundled Tavily Search client with the current user's own API key. The host supplies the AI model, file access, and command execution. See [tool boundaries](docs/TOOLS.md).
 
 ## Task specification
 
@@ -14,7 +14,7 @@ Initialize a directory with scripts/workflow.py. request.json contains the topic
 
 | Stage | Inputs | Outputs | Quality gate |
 |---|---|---|---|
-| Search | Task specification, permitted source scope | 原始素材/, search-log.md | Verifiable URL, date, relevance, access quality, duplicate check |
+| Search | Task specification, queries.json, user-owned TAVILY_API_KEY | candidates.json, screening.json, 原始素材/, search-log.json / .md | Verifiable URL, date, relevance, access quality, duplicate check |
 | Organize | Collected material, optional outline | 素材整理（按论点）.md, evidence-map.json | Claims linked to source passages; gaps and conflicting evidence recorded |
 | Report | Evidence map, organized material, writing requirements | 报告初稿.md, review.md | Every cited claim traceable; quotations and uncertainty preserved |
 | Present | Draft, source materials, evidence map | articles.json, 素材呈现.docx | Citation IDs and URLs match; cited passages highlighted; document validates |
@@ -44,3 +44,11 @@ Structural validation cannot establish factual correctness, translation quality,
 ## Default editorial format
 
 Use the analytical report style in [writing-style.md](skills/media-report/references/writing-style.md) unless the user supplies another format. The [fictional case](examples/demo/README.md) demonstrates the format and reasoning with fabricated events and sources, distinct from the real publisher catalog.
+
+## Executable Search handoff
+
+Read [QUICKSTART.md](docs/QUICKSTART.md). Run `tavily_search.py plan`, have the AI localize and review queries.json, then run `search`. The AI reviews every candidate and writes screening.json before `save`. No semantic pass/fail decision is inferred by the API client. Candidate raw content starts as partial until reviewed; summary-only content cannot be labeled full.
+
+Successful requests are cached by the request and task interval; changing the plan creates new request IDs. max-calls bounds new requests per invocation. Failed requests are not cached as successes. Rerun after fixing credentials/limits or allowing more calls. The client does not auto-retry in a loop; record and investigate repeated failures. Mark Search complete only after assessing per-query failures, region coverage, screening outcomes, and remaining source gaps.
+
+A user can import legally obtained files into Clippings/ when the API lacks sufficient text. Keep source URLs and completeness labels. Later stages must prioritize verified full source material, not silently upgrade snippets to full articles.

@@ -18,18 +18,15 @@ The coordinator routes tasks through four specialist roles: Search, Organize, Re
 
 Primary source data is international news media reporting, selected through the configurable regional publisher catalog. Optional think-tank material is a separately identified supplementary source type. Publisher domains are query filters, not API endpoints or licensed news feeds. The bundled case uses explicitly fictional articles and does not contain real reporting.
 
-## Search tools: included vs. external
+## Real retrieval with Tavily
 
-| Component | Included in this package? |
-|---|---|
-| Search-role instructions, multilingual query guidance, filtering and provenance rules | Yes |
-| Regional publisher domains and language configuration | Yes: config/sources.json |
-| Executable news search API client, crawler, or provider SDK | No |
-| Model API client or automatic agent spawning runtime | No |
-| Initialization, citation checks, and Word generation | Yes |
-| Real API credentials or access to a paid news feed | No |
+The package includes an executable **Tavily Search API client** and the complete retrieve → review → save handoff. **Every user must provide their own Tavily API key and quota. No author's credentials are included.**
 
-Actual retrieval requires a search/browser tool exposed by the host agent environment or a separately configured API integration. The package contains no built-in retrieval implementation. SEARCH_API_KEY in .env.example is an empty illustrative placeholder; no included script loads it, and setting it alone does not enable search. See [tool boundaries](docs/TOOLS.md).
+- Start with [START-HERE.md](START-HERE.md) for an AI-ready prompt.
+- Follow the full [usage guide](docs/QUICKSTART.md) for setup, query planning, retrieval, screening, writing, and Word export.
+- Read the [tool inventory](docs/TOOLS.md) to distinguish the included API client from capabilities supplied by the host AI.
+
+The key is read from TAVILY_API_KEY, or entered privately by the user with --prompt-key. The .env.example file is a blank template and is not automatically loaded. Do not paste keys into an AI conversation, command argument, or tracked file.
 
 ## Capabilities
 
@@ -65,14 +62,29 @@ The dates above are illustrative. Replace them with the desired research period.
 
 > Read skills/media-workflow/SKILL.md and execute the task in runs/demo/request.json. Record evidence gaps and produce a draft report and a source appendix.
 
-The agent performs research and semantic review. The CLI initializes files, checks citation mappings, and formats documents; it is not an autonomous model service. Use a search provider supported by the host environment. If that provider needs credentials, configure them through its environment or secret manager, never in task messages or tracked files.
+The AI prepares and reviews queries, then runs:
+
+```bash
+python3 scripts/tavily_search.py plan runs/demo
+# AI edits queries.json, localizes queries, and sets reviewed: true.
+python3 scripts/tavily_search.py search runs/demo --dry-run
+# Real retrieval requires the user's own TAVILY_API_KEY in the environment.
+python3 scripts/tavily_search.py search runs/demo --max-calls 16
+# AI reviews candidates.json and writes screening.json for every candidate.
+python3 scripts/tavily_search.py save runs/demo
+```
+
+Read the usage guide before executing a real search: it consumes the user's own API quota. Subsequent AI stages organize evidence, draft the report, and produce articles.json for the Word renderer. The scripts implement retrieval and deterministic file operations; semantic work and optional subagent delegation use the host AI environment.
 
 ## Project map
 
 | Path | Purpose |
 |---|---|
 | [WORKFLOW.md](WORKFLOW.md) | Stage contracts, quality gates, and recovery |
-| [docs/TOOLS.md](docs/TOOLS.md) | Search integration requirements and implemented utilities |
+| [START-HERE.md](START-HERE.md) | Copyable instructions for another AI Agent |
+| [docs/QUICKSTART.md](docs/QUICKSTART.md) | Complete end-to-end usage guide |
+| [docs/TOOLS.md](docs/TOOLS.md) | Actual API and tool inventory |
+| [scripts/tavily_search.py](scripts/tavily_search.py) | Tavily planning, retrieval, caching, screening handoff, and source saving |
 | [skills/media-workflow](skills/media-workflow/SKILL.md) | Coordinator instructions |
 | [skills/](skills/) | Four stage-specific skills |
 | [config/sources.json](config/sources.json) | Editable regional publisher and language catalog |
@@ -86,3 +98,5 @@ Keep this repository intact so relative skill links remain valid. Actual assignm
 ## 中文说明
 
 项目保留八组媒体与地区检索配置，以及帽段、总领句、分论点、叙事归纳和脚注等文风要求。研究对象由实际任务输入，不预置固定对象。虚构案例使用完整情节与模拟报道展示写法；其中的虚构媒体与真实检索目录分开，避免把构造观点归给现实媒体。
+
+真实检索使用随包提供的 Tavily Search 客户端。**其他使用者必须配置自己的 TAVILY_API_KEY**；项目不提供任何可用密钥。完整流程与命令见中文使用指南，其他 AI 可从 START-HERE.md 直接开始。
