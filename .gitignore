@@ -1,0 +1,11 @@
+node_modules/
+runs/
+dist/
+.env
+.env.*
+!.env.example
+SECRET.md
+**/SECRET.md
+.DS_Store
+__pycache__/
+*.pyc

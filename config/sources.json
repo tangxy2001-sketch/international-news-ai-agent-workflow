@@ -1,0 +1,124 @@
+{
+  "description": "可调整的检索分组；分组不等于媒体注册地、受众范围或报道立场。",
+  "groups": [
+    {
+      "id": "美国",
+      "languages": [
+        "en"
+      ],
+      "domains": [
+        "bloomberg.com",
+        "wsj.com",
+        "cnn.com",
+        "cnbc.com",
+        "nytimes.com",
+        "washingtonpost.com",
+        "npr.org",
+        "axios.com",
+        "newsweek.com",
+        "nbcnews.com",
+        "apnews.com"
+      ]
+    },
+    {
+      "id": "英国",
+      "languages": [
+        "en"
+      ],
+      "domains": [
+        "bbc.com",
+        "bbc.co.uk",
+        "ft.com",
+        "theguardian.com",
+        "economist.com",
+        "reuters.com"
+      ]
+    },
+    {
+      "id": "欧洲大陆",
+      "languages": [
+        "fr",
+        "de",
+        "en"
+      ],
+      "domains": [
+        "lemonde.fr",
+        "france24.com",
+        "rfi.fr",
+        "spiegel.de",
+        "dw.com",
+        "sueddeutsche.de"
+      ]
+    },
+    {
+      "id": "日韩",
+      "languages": [
+        "ja",
+        "ko",
+        "en"
+      ],
+      "domains": [
+        "nikkei.com",
+        "asia.nikkei.com",
+        "nhk.or.jp",
+        "asahi.com",
+        "chosun.com",
+        "yna.co.kr",
+        "hani.co.kr"
+      ]
+    },
+    {
+      "id": "中东",
+      "languages": [
+        "ar",
+        "en"
+      ],
+      "domains": [
+        "aljazeera.com",
+        "alarabiya.net",
+        "tehrantimes.com",
+        "jpost.com"
+      ]
+    },
+    {
+      "id": "俄罗斯",
+      "languages": [
+        "ru",
+        "en"
+      ],
+      "domains": [
+        "tass.com",
+        "rt.com",
+        "kommersant.ru"
+      ]
+    },
+    {
+      "id": "亚太其他",
+      "languages": [
+        "en",
+        "zh"
+      ],
+      "domains": [
+        "scmp.com",
+        "straitstimes.com",
+        "timesofindia.indiatimes.com",
+        "ndtv.com",
+        "storm.mg"
+      ]
+    },
+    {
+      "id": "国际智库",
+      "languages": [
+        "en"
+      ],
+      "domains": [
+        "brookings.edu",
+        "csis.org",
+        "cfr.org",
+        "carnegieendowment.org",
+        "chathamhouse.org",
+        "iiss.org"
+      ]
+    }
+  ]
+}

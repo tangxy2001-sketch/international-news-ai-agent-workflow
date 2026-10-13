@@ -1,0 +1,122 @@
+[
+  {
+    "footnote": 1,
+    "media_cn": "潮望通讯社（虚构）",
+    "title_cn": "试点缩短申报时间，适用范围仍有限",
+    "url": "https://example.com/fictional-port-pilot/source-1",
+    "paragraphs": [
+      {
+        "text": "【虚构案例】2031年4月，澄岚联邦宣布与维洛共和国启动港口预约编码互认试点。两国、试点、媒体和数据均为构造内容，不对应现实事件。",
+        "highlight": false
+      },
+      {
+        "text": "潮望通讯社在这份模拟报道中记录，试点覆盖两座示范港的预约资料预审；模拟样本的平均预审时间由18小时降至11小时。该数据不包含靠泊等待、查验和内陆运输，不能代表货物全程通行效率。",
+        "highlight": true
+      },
+      {
+        "text": "虚构的澄湾物流研究所研究员洛宁表示：“预审提速并不等于全程提速，码头调度能力仍会决定实际收益。”",
+        "highlight": true
+      }
+    ]
+  },
+  {
+    "footnote": 2,
+    "media_cn": "远岸观察（虚构）",
+    "title_cn": "兼容方案成为试点扩围的关键",
+    "url": "https://example.com/fictional-port-pilot/source-2",
+    "paragraphs": [
+      {
+        "text": "【虚构案例】本文为港口预约编码互认事件的模拟后续报道。所有机构、受访者与表述均为构造。",
+        "highlight": false
+      },
+      {
+        "text": "远岸观察分析称，大型承运企业已使用统一数据接口，调整成本相对有限；小型代理商仍需改造旧系统。虚构的雾汀商学院研究员伊岚认为，若能保留兼容窗口，试点收益才可能向中小企业扩散。",
+        "highlight": true
+      },
+      {
+        "text": "报道同时说明，测试参与者尚未形成具有代表性的企业样本，因此不能据此推断整个行业的成本变化。",
+        "highlight": true
+      }
+    ]
+  },
+  {
+    "footnote": 3,
+    "media_cn": "新陆评论（虚构）",
+    "title_cn": "技术提速讨论延伸至规则参与权",
+    "url": "https://example.com/fictional-port-pilot/source-3",
+    "paragraphs": [
+      {
+        "text": "【虚构案例】本文为完全虚构的评论文章，讨论构造的试点章程。",
+        "highlight": false
+      },
+      {
+        "text": "新陆评论评论称，试点章程草案把接口升级和争议处理交由联合技术委员会决定，而新增参与方在试运行期仅能提交意见。文章据此把讨论焦点从办理速度转向规则修订的参与权。",
+        "highlight": true
+      },
+      {
+        "text": "文章并未断言该安排构成永久排斥，而是指出试运行后的表决机制仍待说明。",
+        "highlight": true
+      }
+    ]
+  },
+  {
+    "footnote": 4,
+    "media_cn": "群岛商业报（虚构）",
+    "title_cn": "标准集中引发平台依赖讨论",
+    "url": "https://example.com/fictional-port-pilot/source-4",
+    "paragraphs": [
+      {
+        "text": "【虚构案例】以下平台安排、引语和机构均为构造。",
+        "highlight": false
+      },
+      {
+        "text": "群岛商业报援引虚构的北汐数字治理研究院研究员简禾分析称，试点有望减少多套接口并行维护的成本，但若后续升级依赖单一协调节点，参与企业的切换成本可能上升。",
+        "highlight": true
+      },
+      {
+        "text": "简禾在模拟采访中表示：“效率收益可以先行兑现，退出与迁移规则却不能留到争议发生以后。”报道没有声称现有试点已造成市场垄断。",
+        "highlight": true
+      }
+    ]
+  },
+  {
+    "footnote": 5,
+    "media_cn": "晨港周刊（虚构）",
+    "title_cn": "文件对照削弱排他性准入的笼统推断",
+    "url": "https://example.com/fictional-port-pilot/source-5",
+    "paragraphs": [
+      {
+        "text": "【虚构案例】本文及文中所述公开文件、讨论和修订行为均不存在于现实。",
+        "highlight": false
+      },
+      {
+        "text": "晨港周刊在模拟核对中发现，一份评论把接口格式要求描述为排除外部企业的准入安排，但虚构的试点附件同时列有开放申请流程和三个月兼容期。该周刊据此认为，把技术门槛直接等同于排他性限制，超出了文件能够支持的范围。",
+        "highlight": true
+      },
+      {
+        "text": "周刊仍指出，申请标准的执行是否透明尚需后续观察，不能仅凭开放申请条款认定实践中不存在障碍。",
+        "highlight": true
+      }
+    ]
+  },
+  {
+    "footnote": 6,
+    "media_cn": "远帆政策研究室（虚构）",
+    "title_cn": "透明机制影响合作能否由试点转向常态",
+    "url": "https://example.com/fictional-port-pilot/source-6",
+    "paragraphs": [
+      {
+        "text": "【虚构案例】远帆政策研究室是为演示创建的机构，其研究结论与建议均属构造。",
+        "highlight": false
+      },
+      {
+        "text": "该研究室的模拟简报认为，试点能否转为常态合作，取决于错误数据的责任划分、系统故障时的替代流程，以及申请方能否获得可解释的拒绝理由。简报建议设置定期披露和第三方复核机制。",
+        "highlight": true
+      },
+      {
+        "text": "简报将上述条件作为可检验的合作门槛，并未预测试点必然扩围或终止。",
+        "highlight": true
+      }
+    ]
+  }
+]

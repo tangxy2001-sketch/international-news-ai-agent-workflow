@@ -1,0 +1,65 @@
+{
+  "synthetic": true,
+  "claims": [
+    {
+      "id": "C1",
+      "text": "局部提速不能等同全程效率改善",
+      "sources": [
+        "https://example.com/fictional-port-pilot/source-1"
+      ],
+      "limitations": [
+        "虚构示例；单条材料，仅演示结构，不代表充分佐证。"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "企业适配能力影响收益扩散",
+      "sources": [
+        "https://example.com/fictional-port-pilot/source-2"
+      ],
+      "limitations": [
+        "虚构示例；单条材料，仅演示结构，不代表充分佐证。"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "讨论由技术效果转向规则参与权",
+      "sources": [
+        "https://example.com/fictional-port-pilot/source-3"
+      ],
+      "limitations": [
+        "虚构示例；单条材料，仅演示结构，不代表充分佐证。"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "统一接口收益与迁移成本并存",
+      "sources": [
+        "https://example.com/fictional-port-pilot/source-4"
+      ],
+      "limitations": [
+        "虚构示例；单条材料，仅演示结构，不代表充分佐证。"
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "排他性判断须接受文件对照",
+      "sources": [
+        "https://example.com/fictional-port-pilot/source-5"
+      ],
+      "limitations": [
+        "虚构示例；单条材料，仅演示结构，不代表充分佐证。"
+      ]
+    },
+    {
+      "id": "C6",
+      "text": "透明机制构成合作持续的条件",
+      "sources": [
+        "https://example.com/fictional-port-pilot/source-6"
+      ],
+      "limitations": [
+        "虚构示例；单条材料，仅演示结构，不代表充分佐证。"
+      ]
+    }
+  ]
+}
